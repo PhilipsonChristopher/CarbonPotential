@@ -13,6 +13,10 @@ Fig 2. The relationship between carbon density and canopy cover for ‘low impac
 ### Low impact areas mask
 In order to estimate the carbon potential of undisturbed ecosystems, we only sample Low Impact Areas (LIA) as defined in Jacobson *et al.* (2019). The reason for this is that we aim to estimate the carbon potential in ecosystems close to an undisturbed state as possible. 
 
+### Input datasets
+We use the following datasets.  We are open to using other datasets if available (dependent on funding for computational time).
+[!Insert Joels Input datasets markdown table]
+
 ### Computational steps:
 We follow these computational steps to generate datasets of soil organic carbon (SOC), aboveground biomass (AGB) and canopy cover (CANOPY) for all **Ecoregions**
 
@@ -28,9 +32,6 @@ Extract a 10000 random-point sample of values of each component (SOC, AGB and CA
 Finally, we aggregate all values by Ecoregion resulting in a global dataset of Ecoregions each with SOC, AGB, CANOPY.
 #### 6. Predictions and graphs
 Results are plotted as xy density scatter plots per Biome, due to large size of datasets.  We model the realtionship between carbon (each SOC and AGB) and canopy cover for each Biome using linear mixed effects models with a random effect for Ecoregion.  We estimate the carbon potential by predicting the SOC and AGB at the mean canopy cover for each biome. We will do this at the ecoregion level.
-
-### Input datasets
-[Insert table]
 
 ## Example Ecoregions
 Five example ecoregions from Biome 1, 'Tropical & Subtropical Moist Broadleaf Forests'
