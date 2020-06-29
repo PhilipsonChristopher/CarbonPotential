@@ -4,7 +4,6 @@
 The aim is to estimate both the soil and plant **carbon potential** for all global terrestrial  **ecoregions.**
 
 For areas of low human impact, we explore the relationship between Soil Oganic Carbon (SOC), Plant Carbon and Canopy Cover for all Biomes accounting for variation in Ecoregions.
-[insert graph]
 ![Fig 2](https://github.com/PhilipsonChristopher/CarbonPotential/blob/master/Fig2_Biomes.png)
 
 
