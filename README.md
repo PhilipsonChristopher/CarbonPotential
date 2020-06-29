@@ -50,5 +50,5 @@ Biome # |Canopy Cover (%)|Plant Carbon (Mg/ha)|SOC (Mg/ha)|Biome name| Bastin 20
 13|3|30|141|Deserts & Xeric Shrublands|73.7|2.1|2|10
 14|87|248|905|Mangroves|2.1|0.2|1|2
 ||||||||
-||||||Total|**65.5**|**79**| **544**|
+||||||Total|**65.5 (Gt)**|**79 (Gt)**| **544 (Gt)**|
 ||||||||
