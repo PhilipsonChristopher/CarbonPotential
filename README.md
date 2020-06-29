@@ -11,7 +11,7 @@ Content in the first column | Content in the second column
 
 
 
-Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin2019 Area (Mha)|CurSOC|PlantDraw|SoilDraw
+Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin2019 Area (Mha)|Current SOC Stock (Gt)|PlantDraw (Gt)|SoilDraw (Gt)
 ---- | -----|------|---|------|-------------------|------|---------|--------
  1|83|217|501|Trop&SubMoistBroadFor|82|6.28|17794|40567.04
  2|60|135|267|Trop&SubDryBroadFor|19|0.48|2565|5063.88
