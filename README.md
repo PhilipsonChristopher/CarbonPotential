@@ -32,7 +32,7 @@ Results are plotted as xy density scatter plots per Biome, due to large size of 
 
 ## Example Ecoregions
 Five example ecoregions
-(https://github.com/PhilipsonChristopher/CarbonPotential/blob/master/LI_Ecoregions1-5.png)
+![Fig 3](https://github.com/PhilipsonChristopher/CarbonPotential/blob/master/LI_Ecoregions1-5.png)
 
 
 ## Table 2. Carbon Potential aggregated at the Biome level.  
