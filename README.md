@@ -5,6 +5,8 @@ The aim is to estimate both the soil and plant **carbon potential** for all glob
 
 For areas of low human impact, we explore the relationship between Soil Oganic Carbon (SOC), Plant Carbon and Canopy Cover for all Biomes accounting for variation in Ecoregions.
 [insert graph]
+![Fig 2](https://github.com/PhilipsonChristopher/CarbonPotential/blob/master/Fig2_Biomes.png)
+
 
 ### Low impact areas mask
 In order to estimate the carbon potential of undisturbed ecosystems, we only sample Low Impact Areas (LIA) as defined in Jacobson *et al.* (2019). The reason for this is that we aim to estimate the carbon potential in ecosystems close to an undisturbed state as possible. 
