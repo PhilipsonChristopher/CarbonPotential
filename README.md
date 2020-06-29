@@ -4,6 +4,7 @@
 The aim is to estimate both the soil and plant **carbon potential** for all global terrestrial  **ecoregions.**
 
 For areas of low human impact, we explore the relationship between Soil Oganic Carbon (SOC), Plant Carbon and Canopy Cover for all Biomes accounting for variation in Ecoregions.
+##Example Biomes
 ![Fig 2](https://github.com/PhilipsonChristopher/CarbonPotential/blob/master/Fig2_Biomes.png)
 Fig 2. The relationship between carbon density and canopy cover for ‘low impact areas’. Data are presented as a heat scatter plot with separate columns for Aboveground Carbon Density (first column), Soil Organic Carbon (second column) and Total Carbon (third column). We present four example Biomes: In the first row, tropical moist forests, in the second row, tropical coniferous forests, in the third row tropical grasslands, savannahs & schrublands, and in the forth row mangroves. All biomes are presented in Fig S1. Frequency density plots adjacent to the axis highlight the distribution of each variable (carbon density and canopy cover) and therefor the highlight most common canopy cover % and most common carbon density independently of their relationship.
 
