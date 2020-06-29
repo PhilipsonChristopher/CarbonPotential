@@ -22,5 +22,5 @@ Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin 2019 Area (Mha)
 13|3|30|141|Deserts & Xeric Shrublands|73.7|2.1|2211|10238
 14|87|248|905|Mangroves|2.1|0.2|521|1900
 ||||||||
-|||||65.5|79| 544|
+|||||||65.5|79| 544|
 ||||||||
