@@ -5,7 +5,7 @@ We aim estimate the carbon potential of the different biomes of the world using 
 
 This is a collaborative project. Please contact me if you wish to contribute 
 
-Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin 2019 Area (Mha)|Current SOC Stock (Gt)|PlantDraw (Gt)|SoilDraw (Gt)
+Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin 2019 Area (Mha)|Current SOC Stock (Gt)|Plant Carbon Potential (Gt)|Soil Carbon Potential (Gt)
 ---- | -----|------|---|------|-------------------|------|---------|--------
 1|83|217|501|Tropical & Subtropical Moist Broadleaf Forests|82|6.3|17794|40567
 2|60|135|267|Tropical & Subtropical Dry Broadleaf Forests|19|0.5|2565|5064
@@ -22,5 +22,5 @@ Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin 2019 Area (Mha)
 13|3|30|141|Deserts & Xeric Shrublands|73.7|2.1|2211|10238
 14|87|248|905|Mangroves|2.1|0.2|521|1900
 ||||||||
-||||||||
+|||||65.5|79| 544|
 ||||||||
