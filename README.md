@@ -3,9 +3,8 @@ We aim estimate the carbon potential of the different biomes of the world using 
 
 This is a collaborative project. Please contact me if you wish to contribute 
 
-# First Header | Second Header
-# First Header | Second Header
--------|----- | -------------
+  First Header | Second Header
+---------------| -------------
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
