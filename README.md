@@ -1,6 +1,7 @@
 # Carbon Potential
 ## We estimate the carbon potential of all Biomes and their Ecoregions using published global datasets
-### This is a collaborative project. Please contact me if you wish to contribute 
+### This is a collaborative project. Please contact me if you wish to contribute.
+### Joel Fiddes and Christopher Philipson
 The aim is to estimate both the soil and plant **carbon potential** for all global terrestrial **Biomes** and **Ecoregions.**
 
 ## Example Biomes
