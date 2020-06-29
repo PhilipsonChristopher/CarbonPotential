@@ -13,22 +13,20 @@ In order to estimate the carbon potential of undisturbed ecosystems, we only sam
 We follow these computational steps to generate datasets of soil organic carbon (SOC), aboveground biomass (AGB) and canopy cover (CANOPY) for all **Ecoregions**
 
 #### 1. Retrieve all global data
-Retrieve all global data tiles (AGB, SOC, CANOPY), AGB tiles define the computation domain. We loop the algorithm over all tiles that constitute the entire global land surface 
+To retrieve all global data tiles (AGB, SOC, CANOPY), we loop the algorithm over all tiles that constitute the entire global land surface. The AGB tiles define the computation domain.
 #### 2. Resample
-Resample SOC and LIA tiles to a common 30m grid 
+Resample SOC and LIA tiles to a common 30m grid
 #### 3. Mask Low Impact Areas
-mask all data layers by LIA to extract only low impact regions for further analysis.
+Mask all data layers by LIA to extract data only from low impact regions for further analysis.
 #### 4. Random Sample
-Extract a 10000 random-point sample of values of each component (SOC, AGB and CANOPY) for ecoregions. This results in a number of results tables per tile (AGB, SOC, CANOPY, 3 cols x 10000 rows) equal to number of biome or ecoregion members within a tile. 
+Extract a 10000 random-point sample of values of each component (SOC, AGB and CANOPY) for each ecoregion. This results in a number of results tables per tile (AGB, SOC, CANOPY, 3 cols x 10000 rows) equal to number of ecoregions within a tile. 
 #### 5. Aggregate tiles
-Finally, we aggregate all values by Ecoregion and Biome resulting in a global of Ecoregions each with SOC, AGB, CANOPY.
-#### 6. Predictions and graphs 
-Results are plotted as xy density scatter plots per Biome, due to large size of datasets.
-
+Finally, we aggregate all values by Ecoregion resulting in a global dataset of Ecoregions each with SOC, AGB, CANOPY.
+#### 6. Predictions and graphs
+Results are plotted as xy density scatter plots per Biome, due to large size of datasets.  We model the realtionship between carbon (each SOC and AGB) and canopy cover for each Biome using linear mixed effects models with a random effect for Ecoregion.  We estimate the carbon potential by predicting the SOC and AGB at the mean canopy cover for each biome. We will do this at the ecoregion level.
 
 ### Input datasets
 [Insert table]
-
 
 
 
