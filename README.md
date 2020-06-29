@@ -1,6 +1,27 @@
 # Carbon Potential
 We aim estimate the carbon potential of the different biomes of the world using published global datasets
 
+# col span previous cell if cell is empty
+# if want to keep an empty one, use non-white char like '-'
+# 
+# following table contains two layer headers
+# first header has two colspan with first empty
+# second header has two cells and one colspan cell
+# |   |   | Column 1 | |
+# | a | b | haha     | |
+# |----
+# 
+# row span cells with same text
+# following table contains rowspan
+# | :---: | -----
+# | names | tom |
+# | names | jerry |
+# | film  | cartoon |
+# 
+# use option `table_rowspan` and `table_colspan` to control
+# option values: :all, :first, nil
+
+
 This is a collaborative project. Please contact me if you wish to contribute 
 
 Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin 2019 Area (Mha)|Current SOC Stock (Gt)|PlantDraw (Gt)|SoilDraw (Gt)
