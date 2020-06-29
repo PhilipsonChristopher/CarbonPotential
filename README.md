@@ -1,7 +1,7 @@
 # Carbon Potential
 ## We estimate the carbon potential of the different Ecoregions and Biomes using published global datasets
 ### This is a collaborative project. Please contact me if you wish to contribute 
-The aim is to estimate both the soil and plant **carbon potential ** for all global terrestrial  **ecoregions.**
+The aim is to estimate both the soil and plant **carbon potential** for all global terrestrial  **ecoregions.**
 
 For areas of low human impact, we explore the relationship between Soil Oganic Carbon (SOC), Plant Carbon and Canopy Cover for all Biomes accounting for variation in Ecoregions.
 [insert graph]
