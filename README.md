@@ -1,9 +1,9 @@
 # Carbon Potential
-## We estimate the carbon potential of the different biomes of the world using published global datasets
+## We estimate the carbon potential of the different Ecoregions and Biomes using published global datasets
 
-The aim is to estimate of Soil Oganic Carbon (SOC) and Plant Carbon for all global terrestrial ecoregions.
+The aim is to estimate both the soil and plant carbon potential for all global terrestrial ecoregions.
 
-
+We explore the relationship between Soil Oganic Carbon (SOC), Plant Carbon and Canop Cover for all Biomes accounting for variation in Ecoregions.
 
 ### Low impact areas mask
 In order to estimate the carbon potential of undisturbed ecosystems, we only sample low impact areas (LIA) as defined in Jacobson *et al.* (2019). The reason for this is that we aim to estimate the carbon potential in ecosystems close to an undisturbed state as possible. 
