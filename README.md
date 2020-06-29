@@ -9,6 +9,7 @@ For areas of low human impact, we explore the relationship between Soil Oganic C
 Fig 2. The relationship between carbon density and canopy cover for ‘low impact areas’. Data are presented as a heat scatter plot with separate columns for Aboveground Carbon Density (first column), Soil Organic Carbon (second column) and Total Carbon (third column). We present four example Biomes: In the first row, tropical moist forests, in the second row, tropical coniferous forests, in the third row tropical grasslands, savannahs & schrublands, and in the forth row mangroves. All biomes are presented in Fig S1. Frequency density plots adjacent to the axis highlight the distribution of each variable (carbon density and canopy cover) and therefor the highlight most common canopy cover % and most common carbon density independently of their relationship.
 
 
+## Methods
 ### Low impact areas mask
 In order to estimate the carbon potential of undisturbed ecosystems, we only sample Low Impact Areas (LIA) as defined in Jacobson *et al.* (2019). The reason for this is that we aim to estimate the carbon potential in ecosystems close to an undisturbed state as possible. 
 
