@@ -7,7 +7,7 @@ For areas of low human impact, we explore the relationship between Soil Oganic C
 [insert graph]
 
 ### Low impact areas mask
-In order to estimate the carbon potential of undisturbed ecosystems, we only sample low impact areas (LIA) as defined in Jacobson *et al.* (2019). The reason for this is that we aim to estimate the carbon potential in ecosystems close to an undisturbed state as possible. 
+In order to estimate the carbon potential of undisturbed ecosystems, we only sample Low Impact Areas (LIA) as defined in Jacobson *et al.* (2019). The reason for this is that we aim to estimate the carbon potential in ecosystems close to an undisturbed state as possible. 
 
 ### Computational steps:
 We follow these computational steps to generate datasets of soil organic carbon (SOC), aboveground biomass (AGB) and canopy cover (CANOPY) for all **Ecoregions**
