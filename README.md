@@ -31,7 +31,7 @@ Results are plotted as xy density scatter plots per Biome, due to large size of 
 [Insert table]
 
 ## Example Ecoregions
-Five example ecoregions
+Five example ecoregions from Biome 1, 'Tropical & Subtropical Moist Broadleaf Forests'
 ![Fig 3](https://github.com/PhilipsonChristopher/CarbonPotential/blob/master/LI_Ecoregions1-5.png)
 
 
