@@ -4,8 +4,19 @@
 The aim is to estimate of Soil Oganic Carbon (SOC) and Plant Carbon for all global terrestrial ecoregions.
 
 
-###  Low impact areas mask
+
+### Low impact areas mask
 In order to estimate the carbon potential of undisturbed ecosystems, we only sample low impact areas (LIA) as defined in Jacobson *et al.* (2019). The reason for this is that we aim to estimate the carbon potential in ecosystems close to an undisturbed state as possible. 
+
+### Computational steps
+The following computational steps are followed to generate datasets of soil organic carbon (SOC), above ground biomass (AGB) and canopy cover (CANOPY) for all **Ecoregions**
+
+### 1.
+(1) retrieve all global data tiles (AGB, SOC, CANOPY), AGB tiles define the computation domain. We loop the algorithm over all tiles that constitute the entire global land surface (2) resample SOC and LIA tiles to a common 30m grid (3) mask all data layers by LIA to extract only low impact regions for further analysis.(4) extract a 10000 random-point sample of values of each component (SOC, AGB and CANOPY) for each member of ECO unit (biomes or ecoregions). This results in a number of results tables per tile (AGB, SOC, CANOPY, 3 cols x 10000 rows) equal to number of biome or ecoregion members within a tile. (5) Finally, we aggregate all values by biome/ecoregion member resulting in global datasets per member of SOC, AGB, CANOPY.
+(6) Results are plotted as xy density scatter plots per biome/ecoregion, due to large size of datasets.
+
+
+Input datasets
 
 
 
