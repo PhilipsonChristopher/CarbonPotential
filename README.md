@@ -16,7 +16,9 @@ Content from cell 1 | Content from cell 2| Content from cell 2
 Content in the first column | Content in the second column| Content in the second column
 
 
-||First Header                                         || Stocks based on Bastin 2019 Area (Mha)||
+Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin 2019 Area (Mha)|Current SOC Stock (Gt)|PlantDraw (Gt)|SoilDraw (Gt)
+---- | -----|------|---|------|-------------------|------|---------|--------
+
 Biome|canopy cover (%)|plantC (Mg/ha)|SOC (Mg/ha)|BiomeS| Bastin 2019 Area (Mha)|Current SOC Stock (Gt)|PlantDraw (Gt)|SoilDraw (Gt)
 ---- | -----|------|---|------|-------------------|------|---------|--------
 1|83|217|501|Tropical & Subtropical Moist Broadleaf Forests|82|6.3|17794|40567
