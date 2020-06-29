@@ -9,6 +9,7 @@ This is a collaborative project. Please contact me if you wish to contribute
 
 
 Biome|canopy|plantC|soc|BiomeS|Bastin2019_Area_Mha|CurSOC|PlantDraw|SoilDraw
+--- | ---|--- | ---|--- | ---|--- | ---|--- | ---|
  1|1|83|217|501|Trop&SubMoistBroadFor|82|6.28|17794|40567.04
  2|2|60|135|267|Trop&SubDryBroadFor|19|0.48|2565|5063.88
  3|3|60|149|372|Trop&SubConiferFor|6.8|0.14|1013.2|2528.648
