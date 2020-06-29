@@ -31,7 +31,8 @@ Results are plotted as xy density scatter plots per Biome, due to large size of 
 [Insert table]
 
 
-
+## Table 2. Carbon Potential aggregated at the Biome level.  
+This is the average of all Ecoregions.
 Biome # |Canopy Cover (%)|Plant Carbon (Mg/ha)|SOC (Mg/ha)|Biome name| Bastin 2019 Area (Mha)|Current SOC Stock (Gt)|Plant Carbon Potential (Gt)|Soil Carbon Potential (Gt)
 ---- | -----|------|---|------|-------------------|------|---------|--------
 1|83|217|501|Tropical & Subtropical Moist Broadleaf Forests|82|6.3|18|41
