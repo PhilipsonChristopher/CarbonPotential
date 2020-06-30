@@ -18,7 +18,7 @@ In order to estimate the carbon potential of undisturbed ecosystems, we only sam
 ### Input datasets
 We use the following datasets.  We are open to using other datasets if available (dependent on funding for computational time).
 
-Dataset|Resolution|Unit|Time ref|Refernce|Shortname|URL
+Dataset   |Resolution|Unit|Time ref|Reference|Shortname|URL
 -------|----------|----|--------|--------|---------|---
 Global Forest Change|30m|%|2000|Hansen et al. (2013)|HANSEN|https://earthenginepartners.appspot.com/science-2013-global-forest
 Low Impact Areas|1km|NA|2006-2015|Jacobson et al. (2019)|LIA|https://www.nature.com/articles/s41598-019-50558-6
