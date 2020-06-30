@@ -23,7 +23,7 @@ Dataset   |Resolution|Unit|Time ref|Reference|Shortname|URL
 Global Forest Change|30m|%|2000|Hansen et al. (2013)|HANSEN|https://earthenginepartners.appspot.com/science-2013-global-forest
 Low Impact Areas|1km|NA|2006-2015|Jacobson et al. (2019)|LIA|https://www.nature.com/articles/s41598-019-50558-6
 |Global Forest Watch Above ground biomass|30m|Mg/Ha|2000|Woods Hole Research Center; See also Baccini et al.(2012)|GFW|https://data.globalforestwatch.org/datasets/aboveground-live-woody-biomass-density?geometry=-117.070%2C-21.549%2C33.047%2C70.520
-Hengl Soil organic carbon| 250m|Mg/ha| time?|Hengl et al.(2017)|HENGL|https://doi.org/10.1371/journal.pone.0169748 https://soilgrids.org/#!/?layer=ORCDRC_M_sl2_250m&vector=1 https://files.isric.org
+Hengl Soil organic carbon| 250m|Mg/ha| 2000-2017|Hengl et al.(2017)|HENGL|https://doi.org/10.1371/journal.pone.0169748 https://soilgrids.org/#!/?layer=ORCDRC_M_sl2_250m&vector=1 https://files.isric.org
 
 Woods Hole Research Center. Unpublished data. Accessed through Global Forest Watch Climate March 2020. climate.globalforestwatch.org
 
