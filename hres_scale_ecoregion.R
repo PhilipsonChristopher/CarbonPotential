@@ -1,4 +1,9 @@
-# this script builds on hres_scale_ecoregion.R but uses a low impact area mask
+# this script builds on hres_scale_repeat.R but uses ecoregion and no impact area
+# here we changed
+# 1. remove lia mask (comented sections)
+# 2. use ecoregion instead of biome
+# 3. ensure all tiles covered
+
 
 require(raster)
 require(gdalUtils)
@@ -6,36 +11,30 @@ library(doParallel)
 
 
 # number sample points to extract
-N <- 10000
-Nclust <- 4
+N <- 100000
+Nclust <- 10
 download <- TRUE
 wd <- "/media/hdd1/globTree"
-startT1 <- Sys.time()
+
 # OPTION
 rasterOptions(tmpdir = paste0(wd, "/tmp"))
 
 # input filepaths (relative to wd)
 soc_file <- "./input/henglSoils2mSum.tif"
-impact_file <- "./input/Low_Impact_MASK.tif_ll.tif"
+# impact_file="./input/Low_Impact_MASK.tif_ll.tif"
 # ecoreg_file = "./input/ecoreg.shp"
 eco_reg_file <- "./input/ecoreg.shp"
 agb_list <- "./input/Aboveground_live_woody_biomass_density.csv"
 hansen_list <- "./input/getfiles.txt"
 # number of paralele clusters
 myclusters <- Nclust
-system(paste0("rm ", wd, "/dopar.log"))
-cl <- makeCluster(myclusters, outfile = paste0(wd, "/dopar.log")) # 4 cores
+cl <- makeCluster(myclusters) # 4 cores
 registerDoParallel(cl)
 
 # dirs
 outDir <- "./output"
 
 
-
-# py to R index
-# tile=as.numeric(pytile)+1
-# start_time <- Sys.time()
-# print(tile)
 setwd(wd)
 # ==============================================================================
 # Read files
@@ -43,7 +42,7 @@ setwd(wd)
 # Hengl250m global t/Ha
 soilC <- raster(soc_file)
 # global very low impact areas mask at 1k
-vlia <- raster(impact_file)
+# vlia = raster(impact_file)
 # Read global ecoregs
 ecoregs <- shapefile(eco_reg_file)
 
@@ -52,7 +51,6 @@ ntiles <- dim(dat)[1]
 ntiles_seq <- 1:ntiles
 # tile=1
 foreach(tile = ntiles_seq) %dopar% {
-  # for (tile in ntiles_seq) {
   startT1 <- Sys.time()
   setwd(wd)
   # check if file exists, rest of script in this loop
@@ -61,7 +59,6 @@ foreach(tile = ntiles_seq) %dopar% {
 
     require(raster)
     require(gdalUtils)
-    rasterOptions(tmpdir = paste0(wd, "/tmp/tile", tile))
 
     # ==============================================================================
     # AGB
@@ -148,24 +145,23 @@ foreach(tile = ntiles_seq) %dopar% {
     soil_crop <- crop(soilC, hansen, snap = "out")
 
     ## dissag to hansen res
-    FACT <- res(soil_crop) / res(hansen)
-    soil_dis <- disaggregate(soil_crop, fact = FACT)
+    # FACT = res(soil_crop)/res(hansen)
+    # soil_dis = disaggregate(soil_crop, fact = FACT)
 
     ## more accurate crop
-    soil_crop <- crop(soil_dis, hansen)
+    # soil_crop = crop(soil_dis, hansen)
 
     ## resample to hansen
-    writeRaster(soil_crop, paste0("./processing/soil_crop", tile, ".tif"), overwrite = TRUE)
-    myfile <- paste0("./processing/soil_crop", tile, ".tif")
-    if (!file.exists(paste0(myfile, "RESAMP", tile, ".tif"))) {
-      R2 <- hansen
-      Routput <- paste0(myfile, "RESAMP", tile, ".tif")
-      t1 <- c(xmin(R2), ymin(R2), xmax(R2), ymax(R2))
-      t2 <- c(res(R2)[1], res(R2)[2])
-      gdalwarp(myfile, dstfile = Routput, tr = t2, te = t1, output_Raster = T, overwrite = T, verbose = T) # , co="COMPRESS=LZW" makes much smaller file but takes loads longer
-    }
+    # writeRaster(soil_crop, paste0("./processing/soil_crop",tile,".tif"),overwrite=TRUE)
+    # myfile=paste0("./processing/soil_crop",tile,".tif")
+    # R2 = hansen
+    # Routput=paste0(myfile,"RESAMP",tile,".tif")
+    # t1 <- c(xmin(R2), ymin(R2), xmax(R2), ymax(R2))
+    # t2 <- c(res(R2)[1], res(R2)[2])
+    # gdalwarp(myfile, dstfile = Routput, tr = t2, te = t1,  output_Raster = T, overwrite = T, verbose = T) #, co="COMPRESS=LZW" makes much smaller file but takes loads longer
+
     ## can rm big file after converted
-    hengl30 <- raster(paste0(myfile, "RESAMP", tile, ".tif"))
+    # hengl30 = raster(paste0( myfile,"RESAMP",tile,".tif"))
 
 
     # extent(hengl30)==extent(hansen)
@@ -178,58 +174,60 @@ foreach(tile = ntiles_seq) %dopar% {
     # ===============================================================================
 
     # rough crop to hansen tile
-    vlia_crop <- crop(vlia, hansen, snap = "out")
+    # vlia_crop = crop(vlia, hansen, snap="out")
 
     ## dissag to hansen res
-    FACT <- res(vlia_crop) / res(hansen)
-    vlia_dis <- disaggregate(vlia_crop, fact = FACT)
+    # FACT = res(vlia_crop)/res(hansen)
+    # vlia_dis = disaggregate(vlia_crop, fact = FACT)
 
     ## more accurate crop
-    vlia_crop <- crop(vlia_dis, hansen)
+    # vlia_crop = crop(vlia_dis, hansen)
 
     ## resample to hansen
-    writeRaster(vlia_crop, paste0("./processing/vlia_crop", tile, ".tif"), overwrite = TRUE)
-    myfile <- paste0("./processing/vlia_crop", tile, ".tif")
-    if (!file.exists(paste0(myfile, "RESAMP", tile, ".tif"))) {
-      R2 <- hansen
-      Routput <- paste0(myfile, "RESAMP", tile, ".tif")
-      t1 <- c(xmin(R2), ymin(R2), xmax(R2), ymax(R2))
-      t2 <- c(res(R2)[1], res(R2)[2])
-      gdalwarp(myfile, dstfile = Routput, tr = t2, te = t1, output_Raster = T, overwrite = T, verbose = T) # , co="COMPRESS=LZW" makes much smaller file but takes loads longer
-    }
+    # writeRaster(vlia_crop, paste0("./processing/vlia_crop",tile,".tif"), overwrite=TRUE)
+    # myfile=paste0("./processing/vlia_crop",tile,".tif")
+    # R2 = hansen
+    # Routput=paste0(myfile,"RESAMP",tile,".tif")
+    # t1 <- c(xmin(R2), ymin(R2), xmax(R2), ymax(R2))
+    # t2 <- c(res(R2)[1], res(R2)[2])
+    # gdalwarp(myfile, dstfile = Routput, tr = t2, te = t1,  output_Raster = T, overwrite = T, verbose = T) #, co="COMPRESS=LZW" makes much smaller file but takes loads longer
 
-    vlia30 <- raster(paste0(myfile, "RESAMP", tile, ".tif"))
+
+    # vlia30 = raster(paste0(myfile,"RESAMP",tile,".tif"))
 
     # ==============================================================================
     # Mask layers by vlia
     # ==============================================================================
 
+
+
+
+
     # mask hansen by vlia
-    if (!file.exists(paste0("./processing/hansen_mask", tile, ".tif"))) {
-      hansen_vlia <- hansen * vlia30
-      writeRaster(hansen_vlia, paste0("./processing/hansen_mask", tile, ".tif"), overwrite = T)
-    }
+    # hansen_vlia =hansen*vlia30
+    # writeRaster(hansen_vlia,paste0("./processing/hansen_mask",tile,".tif"),overwrite=T)
+
     ## mask AGB by vlia
-    if (!file.exists(paste0("./processing/AGB_mask", tile, ".tif"))) {
-      AGB_vlia <- AGB * vlia30
-      writeRaster(AGB_vlia, paste0("./processing/AGB_mask", tile, ".tif"), overwrite = T)
-    }
+    # AGB_vlia =AGB*vlia30
+    # writeRaster(AGB_vlia,paste0("./processing/AGB_mask",tile,".tif"),overwrite=T)
+
     ## mask soc by vlia
-    if (!file.exists(paste0("./processing/hengl30_mask", tile, ".tif"))) {
-      hengl30_vlia <- hengl30 * vlia30
-      writeRaster(hengl30_vlia, paste0("./processing/hengl30_mask", tile, ".tif"), overwrite = T)
-    }
+    # hengl30_vlia =hengl30*vlia30
+    # writeRaster(hengl30_vlia,paste0("./processing/hengl30_mask",tile,".tif"),overwrite=T)
+
     # ==============================================================================
     # *** Analysis starts here ***
     # implemented on hpc /home/caduff/src/globTree/analysis
     # ==============================================================================
 
+
+
     # read in files
 
     dir.create(outDir)
-    hansen_vlia <- raster(paste0("./processing/hansen_mask", tile, ".tif"))
-    AGB_vlia <- raster(paste0("./processing/AGB_mask", tile, ".tif"))
-    hengl30_vlia <- raster(paste0("./processing/hengl30_mask", tile, ".tif"))
+    # hansen_vlia=raster(paste0("./processing/hansen_mask",tile,".tif"))
+    # AGB_vlia=raster(paste0("./processing/AGB_mask",tile,".tif"))
+    # hengl30_vlia=raster(paste0("./processing/hengl30_mask",tile,".tif"))
 
     ecoreg <- crop(ecoregs, hansen)
 
@@ -249,7 +247,7 @@ foreach(tile = ntiles_seq) %dopar% {
       regID <- unique(ecoreg$ECO_ID[ecoreg$ECO_NAME == myecoreg])
 
       startT <- Sys.time()
-      myrast <- AGB_vlia
+      myrast <- AGB
       n <- length(unlist(strsplit(myrast@file@name, "/")))
 
       print(myecoreg)
@@ -268,7 +266,7 @@ foreach(tile = ntiles_seq) %dopar% {
       endT2 <- Sys.time() - startT
       startT <- Sys.time()
 
-      myrast <- hengl30
+      myrast <- soil_crop # hengl30
       # myrast=hengl30
       print(myecoreg)
       name <- strsplit(unlist(strsplit(myrast@file@name, "/"))[n], ".tif")
@@ -286,7 +284,7 @@ foreach(tile = ntiles_seq) %dopar% {
       endT3 <- Sys.time() - startT
       startT <- Sys.time()
 
-      myrast <- hansen_vlia
+      myrast <- hansen
 
       print(myecoreg)
       name <- strsplit(unlist(strsplit(myrast@file@name, "/"))[n], ".tif")
@@ -304,16 +302,14 @@ foreach(tile = ntiles_seq) %dopar% {
       endT4 <- Sys.time() - startT
     }
 
-    # clean up
-    system(paste0("rm ", wd, "/processing/soil_crop", tile, ".tif"))
-    system(paste0("rm ", wd, "/processing/soil_crop", tile, ".tifRESAMP", tile, ".tif"))
-    system(paste0("rm -r ", wd, "/tmp/tile", tile, "/"))
 
-    system(paste0("rm ", wd, "/processing/vlia_crop", tile, ".tif"))
-    system(paste0("rm ", wd, "/processing/vlia_crop", tile, ".tifRESAMP", tile, ".tif"))
-    system(paste0("rm ", wd, "/processing/hengl30_mask", tile, ".tif"))
-    system(paste0("rm ", wd, "/processing/AGB_mask", tile, ".tif"))
-    system(paste0("rm ", wd, "/processing/hengl30_mask", tile, ".tif"))
+
+
+
+    # clean up
+    # system(paste0("rm ",wd,"/processing/soil_crop",tile, ".tif"))
+    # system(paste0("rm ",wd,"/processing/soil_crop",tile, ".tifRESAMP",tile,".tif"))
+
 
     write(1, file = paste0("./logs/endTile_", tile))
   } # end of if file exists condition
